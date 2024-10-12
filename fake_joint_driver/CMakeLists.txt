@@ -6,7 +6,6 @@ find_package(catkin REQUIRED COMPONENTS
   controller_manager
   roscpp
   roslaunch
-  rostest
   urdf
   xacro
 )
@@ -55,5 +54,6 @@ if(CATKIN_ENABLE_TESTING)
     roslaunch_add_file_check(${LAUNCH_FILE})
   endforeach()
 
+  find_package(rostest REQUIRED)
   add_rostest(test/fake_joint_driver.test)
 endif()
